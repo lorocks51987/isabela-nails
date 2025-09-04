@@ -104,4 +104,4 @@ npm run preview
 
 ---
 
-*Feito com 💕 para realçar sua beleza*
+*Feito com 💕 para realçar sua beleza*"# isabela-nails" 
