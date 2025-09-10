@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import escritaLogo from "@/assets/escrita.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,15 +15,15 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border shadow-soft">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border/50 shadow-lg transition-all duration-300">
+      <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img 
-              src="/assets/logo.png" 
+              src={escritaLogo} 
               alt="Isabela Nails Logo" 
-              className="h-24 w-auto"
+              className="h-10 w-auto"
               loading="eager"
             />
           </div>
@@ -72,7 +73,7 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4 mobile-menu">
+          <nav className="md:hidden mt-6 pb-6 border-t border-border pt-6 mobile-menu">
             <div className="flex flex-col space-y-3">
               <button 
                 onClick={() => scrollToSection('inicio')} 

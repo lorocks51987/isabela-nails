@@ -48,7 +48,7 @@ export const Contact = () => {
                 <h3 className="text-xl font-dancing font-bold text-elegant-dark mb-4">
                   Instagram
                 </h3>
-                <a href="https://www.instagram.com/ea_zabela?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                <a href="https://www.instagram.com/isabelanailstudio_/"
                 target="_blank" rel="noopener noreferrer"> 
                   <Button 
                     variant="outline" 

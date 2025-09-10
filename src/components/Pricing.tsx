@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles } from "lucide-react";
+import { Sparkles, CreditCard, MapPin } from "lucide-react";
 
 export const Pricing = () => {
   const services = [
@@ -16,15 +16,21 @@ export const Pricing = () => {
         },
         {
           name: "Alongamento Fibra de Vidro",
-          price: "R$ 80,00",
+          price: "R$ 90,00",
           description: "Alongamento com fios de fibra de vidro, proporcionando naturalidade, resistência e leveza",
           popular: false,
           novidade: true
         },
         {
           name: "Alongamento Soft Gel",
-          price: "R$ 60,00",
+          price: "R$ 50,00",
           description: "Alongamento natural e flexível, perfeito para o dia a dia",
+          popular: false
+        },
+        {
+          name: "Banho de Gel",
+          price: "R$ 45,00",
+          description: "Aplicação de gel para fortalecimento e brilho das unhas naturais",
           popular: false
         }
       ]
@@ -35,21 +41,44 @@ export const Pricing = () => {
       items: [
         {
           name: "Esmaltação em Gel",
-          price: "R$ 40,00",
+          price: "R$ 45,00",
           description: "Esmaltação duradoura com acabamento profissional",
           popular: true
         },
         {
-          name: "Esmaltação Fibra de Vidro",
-          price: "R$ 50,00",
-          description: "Finalização com esmalte sobre alongamento em fibra de vidro, garantindo resistência e elegância",
-          popular: false,
-          novidade:true
+          name: "Esmaltação Comum",
+          price: "R$ 30,00",
+          description: "Esmaltação tradicional com esmaltes de alta qualidade",
+          popular: false
         },
         {
-          name: "Esmaltação Comum",
+          name: "Pé",
           price: "R$ 25,00",
-          description: "Esmaltação tradicional com esmaltes de alta qualidade",
+          description: "Esmaltação nos pés com cuidado especial",
+          popular: false
+        }
+      ]
+    },
+    {
+      category: "Manutenção",
+      icon: <Sparkles className="h-6 w-6 text-gold" />,
+      items: [
+        {
+          name: "Manutenção Gel na Tips",
+          price: "R$ 45,00",
+          description: "Manutenção completa do alongamento em gel",
+          popular: true
+        },
+        {
+          name: "Manutenção Soft Gel",
+          price: "R$ 30,00",
+          description: "Manutenção do alongamento soft gel",
+          popular: false
+        },
+        {
+          name: "Reposição de Unha",
+          price: "R$ 10,00",
+          description: "Reposição de unha quebrada ou perdida",
           popular: false
         }
       ]
@@ -69,7 +98,7 @@ export const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((category, categoryIndex) => (
             <div 
               key={category.category}
@@ -121,6 +150,58 @@ export const Pricing = () => {
               </Card>
             </div>
           ))}
+        </div>
+
+        {/* Informações de Pagamento e Endereço */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
+          {/* Formas de Pagamento */}
+          <Card className="card-elegant border-border/50">
+            <CardHeader className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <CreditCard className="h-6 w-6 text-gold" />
+              </div>
+              <CardTitle className="text-xl font-dancing font-bold text-elegant-dark">
+                Formas de Pagamento
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="font-poppins text-foreground">Cartão de crédito</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="font-poppins text-foreground">Cartão de débito</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="font-poppins text-foreground">PIX</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="font-poppins text-foreground">Dinheiro</span>
+              </div>
+              <div className="border-t border-border/50 pt-3 mt-3">
+                <div className="flex justify-between items-center">
+                  <span className="font-poppins text-foreground/70 text-sm">Taxa de R$ 4,00</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Endereço */}
+          <Card className="card-elegant border-border/50">
+            <CardHeader className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <MapPin className="h-6 w-6 text-gold" />
+              </div>
+              <CardTitle className="text-xl font-dancing font-bold text-elegant-dark">
+                Endereço
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="font-poppins text-foreground leading-relaxed">
+                Rua Victoria Atalla, Nº 55<br />
+                Jardim Marajó
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="text-center mt-12 p-6 bg-gradient-pink rounded-xl shadow-soft">

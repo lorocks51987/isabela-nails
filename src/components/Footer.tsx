@@ -1,3 +1,5 @@
+import esmaltesLogo from "@/assets/esmaltes.png";
+
 export const Footer = () => {
   return (
     <footer className="bg-elegant-dark text-card py-8">
@@ -5,7 +7,7 @@ export const Footer = () => {
         <div className="text-center">
           <div className="mb-6">
             <img 
-              src="/assets/logo.png" 
+              src={esmaltesLogo} 
               alt="Isabela Nails Logo" 
               className="h-16 w-auto mx-auto opacity-80"
             />
