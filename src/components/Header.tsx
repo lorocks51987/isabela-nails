@@ -15,7 +15,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border/50 shadow-lg transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 navbar-translucent shadow-lg transition-all duration-300">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -32,28 +32,28 @@ export const Header = () => {
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Menu principal">
             <button 
               onClick={() => scrollToSection('inicio')} 
-              className="text-foreground hover:text-accent transition-colors font-poppins font-medium"
+              className="text-high-contrast hover:text-gold transition-colors font-poppins font-medium"
               aria-label="Ir para seção Início"
             >
               Início
             </button>
             <button 
               onClick={() => scrollToSection('catalogo')} 
-              className="text-foreground hover:text-accent transition-colors font-poppins font-medium"
+              className="text-high-contrast hover:text-gold transition-colors font-poppins font-medium"
               aria-label="Ir para seção Catálogo"
             >
               Catálogo
             </button>
             <button 
               onClick={() => scrollToSection('valores')} 
-              className="text-foreground hover:text-accent transition-colors font-poppins font-medium"
+              className="text-high-contrast hover:text-gold transition-colors font-poppins font-medium"
               aria-label="Ir para seção Valores"
             >
               Valores
             </button>
             <button 
               onClick={() => scrollToSection('contato')} 
-              className="text-foreground hover:text-accent transition-colors font-poppins font-medium"
+              className="text-high-contrast hover:text-gold transition-colors font-poppins font-medium"
               aria-label="Ir para seção Contato"
             >
               Contato
@@ -77,25 +77,25 @@ export const Header = () => {
             <div className="flex flex-col space-y-3">
               <button 
                 onClick={() => scrollToSection('inicio')} 
-                className="text-left text-foreground hover:text-accent transition-colors font-poppins font-medium py-2"
+                className="text-left text-high-contrast hover:text-gold transition-colors font-poppins font-medium py-2"
               >
                 Início
               </button>
               <button 
                 onClick={() => scrollToSection('catalogo')} 
-                className="text-left text-foreground hover:text-accent transition-colors font-poppins font-medium py-2"
+                className="text-left text-high-contrast hover:text-gold transition-colors font-poppins font-medium py-2"
               >
                 Catálogo
               </button>
               <button 
                 onClick={() => scrollToSection('valores')} 
-                className="text-left text-foreground hover:text-accent transition-colors font-poppins font-medium py-2"
+                className="text-left text-high-contrast hover:text-gold transition-colors font-poppins font-medium py-2"
               >
                 Valores
               </button>
               <button 
                 onClick={() => scrollToSection('contato')} 
-                className="text-left text-foreground hover:text-accent transition-colors font-poppins font-medium py-2"
+                className="text-left text-high-contrast hover:text-gold transition-colors font-poppins font-medium py-2"
               >
                 Contato
               </button>

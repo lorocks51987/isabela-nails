@@ -8,59 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors - soft and elegant */
-    --background: 340 60% 98%;
-    --foreground: 0 0% 15%;
+    /* Base colors - warm and elegant */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-    /* Card system with subtle pink tones */
+    /* Card system with clean whites */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 240 10% 3.9%;
 
     /* Primary - elegant dark for text and accents */
-    --primary: 0 0% 15%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 240 10% 3.9%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Secondary - soft pink */
-    --secondary: 340 60% 95%;
-    --secondary-foreground: 0 0% 15%;
+    /* Secondary - soft warm pink */
+    --secondary: 340 25% 96%;
+    --secondary-foreground: 240 10% 3.9%;
 
-    /* Muted tones */
-    --muted: 340 30% 96%;
-    --muted-foreground: 0 0% 45%;
+    /* Muted tones - better contrast */
+    --muted: 340 15% 94%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    /* Accent - golden elegance */
-    --accent: 45 85% 70%;
-    --accent-foreground: 0 0% 15%;
+    /* Accent - warm gold */
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 98%;
 
-    /* Destructive unchanged */
+    /* Destructive - improved red */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    /* Borders and inputs - subtle pink */
-    --border: 340 20% 90%;
-    --input: 340 20% 94%;
-    --ring: 340 70% 85%;
+    /* Borders and inputs - subtle warm tones */
+    --border: 340 15% 88%;
+    --input: 340 15% 92%;
+    --ring: 38 92% 50%;
 
-    /* Custom Isabella Nails colors */
-    --pink-soft: 340 60% 95%;
-    --pink-medium: 340 70% 85%;
-    --pink-accent: 340 80% 75%;
-    --gold: 45 85% 70%;
-    --gold-light: 45 90% 85%;
-    --elegant-dark: 0 0% 15%;
+    /* Custom Isabella Nails colors - improved palette */
+    --pink-soft: 340 25% 96%;
+    --pink-medium: 340 45% 88%;
+    --pink-accent: 340 65% 78%;
+    --gold: 38 92% 50%;
+    --gold-light: 38 95% 70%;
+    --elegant-dark: 240 10% 3.9%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(340, 60%, 98%), hsl(340, 70%, 95%));
-    --gradient-gold: linear-gradient(135deg, hsl(45, 85%, 70%), hsl(45, 90%, 85%));
-    --gradient-pink: linear-gradient(135deg, hsl(340, 70%, 85%), hsl(340, 60%, 95%));
+    /* Gradients - more vibrant and consistent */
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(340, 25%, 96%));
+    --gradient-gold: linear-gradient(135deg, hsl(38, 92%, 50%), hsl(38, 95%, 70%));
+    --gradient-pink: linear-gradient(135deg, hsl(340, 45%, 88%), hsl(340, 25%, 96%));
 
-    /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(340, 70%, 85% / 0.15);
-    --shadow-gold: 0 8px 25px hsl(45, 85%, 70% / 0.2);
-    --shadow-elegant: 0 10px 40px hsl(0, 0%, 15% / 0.1);
+    /* Shadows - improved depth and consistency */
+    --shadow-soft: 0 4px 20px hsl(240, 10%, 3.9% / 0.08);
+    --shadow-gold: 0 8px 25px hsl(38, 92%, 50% / 0.15);
+    --shadow-elegant: 0 10px 40px hsl(240, 10%, 3.9% / 0.12);
 
     --radius: 0.75rem;
 
@@ -138,43 +138,65 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar */
+  /* Custom scrollbar - improved contrast */
   ::-webkit-scrollbar {
     width: 8px;
   }
 
   ::-webkit-scrollbar-track {
     background: hsl(var(--muted));
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--pink-accent));
+    background: hsl(var(--gold) / 0.6);
     border-radius: 4px;
+    border: 1px solid hsl(var(--muted));
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--gold));
+    border-color: hsl(var(--gold-light));
   }
 
-  /* Focus styles */
+  /* Focus styles - improved accessibility */
   *:focus-visible {
     outline: 2px solid hsl(var(--gold));
     outline-offset: 2px;
+    border-radius: 4px;
   }
 
-  /* Selection styles */
+  /* Selection styles - better contrast */
   ::selection {
-    background: hsl(var(--gold) / 0.3);
+    background: hsl(var(--gold) / 0.2);
     color: hsl(var(--elegant-dark));
+  }
+
+  /* Improved link styles */
+  a {
+    color: hsl(var(--gold));
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  a:hover {
+    color: hsl(var(--gold-light));
+    text-decoration: underline;
   }
 }
 
 @layer components {
   /* Enhanced button hover effects */
   .btn-gold {
-    @apply bg-gold hover:bg-gold-light text-elegant-dark font-poppins font-semibold transition-all duration-300 hover:scale-105 shadow-gold;
+    @apply bg-gold hover:bg-gold-light text-white font-poppins font-semibold transition-all duration-300 hover:scale-105 shadow-gold;
     position: relative;
     overflow: hidden;
+    border: 2px solid transparent;
+  }
+
+  .btn-gold:hover {
+    border-color: hsl(var(--gold-light));
+    box-shadow: 0 8px 25px hsl(var(--gold) / 0.25);
   }
 
   .btn-gold::before {
@@ -184,7 +206,7 @@ All colors MUST be HSL.
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s;
   }
 
@@ -196,10 +218,14 @@ All colors MUST be HSL.
   .card-elegant {
     @apply shadow-soft hover:shadow-elegant transition-all duration-500;
     transform: translateY(0);
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
   }
 
   .card-elegant:hover {
     transform: translateY(-4px);
+    border-color: hsl(var(--gold) / 0.3);
+    box-shadow: 0 10px 40px hsl(var(--elegant-dark) / 0.15);
   }
 
   /* Enhanced text gradients */
@@ -208,6 +234,23 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 700;
+  }
+
+  /* Better text contrast classes */
+  .text-high-contrast {
+    color: hsl(var(--elegant-dark));
+    font-weight: 600;
+  }
+
+  .text-medium-contrast {
+    color: hsl(var(--muted-foreground));
+    font-weight: 500;
+  }
+
+  .text-low-contrast {
+    color: hsl(var(--muted-foreground) / 0.8);
+    font-weight: 400;
   }
 
   /* Enhanced animations */
@@ -233,10 +276,18 @@ All colors MUST be HSL.
   /* Enhanced form focus */
   .input-focus {
     @apply border-border/50 focus:border-gold transition-all duration-300;
+    background: hsl(var(--input));
+    color: hsl(var(--foreground));
   }
 
   .input-focus:focus {
-    box-shadow: 0 0 0 3px hsl(var(--gold) / 0.1);
+    box-shadow: 0 0 0 3px hsl(var(--gold) / 0.15);
+    border-color: hsl(var(--gold));
+    background: hsl(var(--card));
+  }
+
+  .input-focus::placeholder {
+    color: hsl(var(--muted-foreground) / 0.7);
   }
 
   /* Enhanced mobile menu */
@@ -270,10 +321,44 @@ All colors MUST be HSL.
   .btn-gold:focus-visible {
     outline: 2px solid hsl(var(--gold));
     outline-offset: 4px;
+    box-shadow: 0 0 0 4px hsl(var(--gold) / 0.2);
   }
 
   /* Smooth transitions for all interactive elements */
   button, input, textarea, select {
     transition: all 0.2s ease-in-out;
+  }
+
+  /* Better contrast for badges */
+  .badge {
+    background: hsl(var(--gold));
+    color: hsl(var(--elegant-dark));
+    font-weight: 600;
+    border: 1px solid hsl(var(--gold-light));
+  }
+
+  /* Improved navbar contrast */
+  .navbar-translucent {
+    background: hsl(var(--card) / 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  /* Better text readability */
+  .text-readable {
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Enhanced button states */
+  .btn-secondary {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .btn-secondary:hover {
+    background: hsl(var(--secondary) / 0.8);
+    border-color: hsl(var(--gold) / 0.3);
   }
 }
