@@ -36,7 +36,7 @@ Site institucional da **Isabela Nails**, um salão de unhas especializado em alo
 git clone <URL_DO_REPOSITORIO>
 
 # Entre na pasta do projeto
-cd isabela-nails-elegance
+cd isabela-nails
 
 # Instale as dependências
 npm install
